@@ -1,8 +1,13 @@
 import React from 'react'
 
-const VideoItem = () => {
+const VideoItem = (props) => {
   return (
-    <div>video item</div>
+    <div>
+      <li onClick={()=> props.onVideoSelect(props.vid)}>
+        <img src={props.vid.snippet.thumbnails.default.url} alt="" />
+        {props.vid.snippet.title}
+      </li>
+    </div>
   )
 }
 
